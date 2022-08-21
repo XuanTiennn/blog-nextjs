@@ -24,6 +24,7 @@ export function DarkLight(props: IDarkLightProps) {
         <Form.Check
           type="switch"
           id="custom-switch"
+          onChange={changeLocalStoreThem}
         />
       </Form>
     </div>

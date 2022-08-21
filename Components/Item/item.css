@@ -1,0 +1,14 @@
+.item {
+  background-color: #1f2937;
+  list-style: none;
+  padding: 1.5rem;
+  border: 1px solid;
+  cursor: pointer;
+}
+.item:hover {
+  border: 1px solid #60a5fa;
+}
+.item .title {
+  font-size: 16px;
+  color: #3b82f6;
+}
