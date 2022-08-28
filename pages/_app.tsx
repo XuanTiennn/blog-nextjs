@@ -4,6 +4,8 @@ import "../Components/Layout/layout.css";
 import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Components/Item/item.css";
+import "../Components/Tags/tag.css";
+import "../Components/Header/header.css";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div>

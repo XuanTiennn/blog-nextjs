@@ -1,10 +1,18 @@
 import * as React from "react";
 import { Form } from "react-bootstrap";
-import { Enum } from "./../../Enum/enum";
+import { Enum } from "../../Enum/enum";
 
 export interface IDarkLightProps {}
 
 export function DarkLight(props: IDarkLightProps) {
+  // const refisMounted=React.useRef:any(false);
+  // useEffect(()=>{
+  //   if(refisMounted){
+  //     return;
+  //   }else{
+  //     refisMounted.current=true;
+  //   }
+  // },[])
   const changeLocalStoreThem = () => {
     const getTheme = localStorage.getItem("theme");
     localStorage.setItem(
@@ -25,6 +33,7 @@ export function DarkLight(props: IDarkLightProps) {
           type="switch"
           id="custom-switch"
           onChange={changeLocalStoreThem}
+          // checked={refisMounted.current && window.localStorage.getItem("theme") === "light" ? false : true}
         />
       </Form>
     </div>

@@ -43,10 +43,10 @@ const Home: NextPage = (props: any) => {
       </Head>
       <Header />
       <Layout>
-        <ul>
+        <ul className="p-0 mt-5">
           <Row>
-            {props.posts.map((i: object) => (
-              <Col lg={6}>
+            {props.posts.map((i: object,index:number) => (
+              <Col key={index} xs={12} lg={6} >
                 <Item item={i} />
               </Col>
             ))}

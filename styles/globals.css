@@ -1,15 +1,22 @@
---root {
+:root {
   --light: #fff;
   --dark: #111827;
   --black: #000;
+  --bg-item: #fff;
+  --color-text-blue: #3b82f6;
+  --color-border-grey: #4B5563;
 }
 html[theme="dark"] {
   --light: #111827;
   --dark: #fff;
+  --bg-item: #1f2937;
+}
+.wrapper.container {
+  background-color: var(--light);
 }
 html,
 body {
-  background-color: var(--light);
+  background-color: var(--light) !important;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
