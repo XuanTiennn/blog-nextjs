@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Components/Item/item.css";
 import "../Components/Tags/tag.css";
 import "../Components/Header/header.css";
+import "./blog/post.css";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div>

@@ -24,3 +24,6 @@
 .item .item-createAt {
   color: var(--dark);
 }
+.item .item-link{
+  text-decoration: none;
+}
