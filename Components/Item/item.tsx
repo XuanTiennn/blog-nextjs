@@ -4,7 +4,7 @@ export interface ItemProps {
   item?: {
     title?: string;
     tag?: [];
-    highlight: boolean;
+    highlight?: boolean;
     time?: any;
   };
 }
