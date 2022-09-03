@@ -7,6 +7,8 @@ import "../Components/Item/item.css";
 import "../Components/Tags/tag.css";
 import "../Components/Header/header.css";
 import "./blog/post.css";
+import "@uiw/react-md-editor/markdown-editor.css";
+import "@uiw/react-markdown-preview/markdown.css";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div>

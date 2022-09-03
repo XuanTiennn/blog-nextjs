@@ -6,7 +6,7 @@ import Head from "next/head";
 import { Header } from "../../Components/Header/header";
 import { Layout } from "../../Components/Layout/layout";
 import Footer from "./../../Components/Footer/footer";
-
+import Error from "next/error";
 export interface IPostsItemProps {
   _id?: any;
   title?: string;
@@ -24,7 +24,6 @@ export async function getStaticPaths() {
     fallback: true, // can also be true or 'blocking'
   };
 }
-
 export async function getStaticProps(context: any) {
   let post = await BlogService.getPost(context?.params.postId);
   return {
@@ -34,8 +33,11 @@ export async function getStaticProps(context: any) {
   };
 }
 export default function PostsItem(props: any) {
-  const router = useRouter();
-  // console.log({ router, props });
+  const router = useRouter()
+
+  if (!router.isFallback && !props.post?._id) {
+    return <Error statusCode={404} />
+  }
   return (
     <>
       <Head>
@@ -46,9 +48,12 @@ export default function PostsItem(props: any) {
       <Header />
       <Layout>
         <div className="post">
-          <p className="post-title">{props.post.title}</p>
+          <p className="post-title text-color-dark">{props.post.title}</p>
+          <div
+            className="post-content text-color-dark"
+            dangerouslySetInnerHTML={{ __html: props.post.content }}
+          />
         </div>
-        ;
       </Layout>
       <Footer />
     </>

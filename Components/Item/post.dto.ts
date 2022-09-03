@@ -4,4 +4,5 @@ export interface PostDTO {
   tag?: [];
   highlight?: boolean;
   time?: any;
+  content?:any;
 }
