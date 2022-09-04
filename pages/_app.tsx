@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link
           rel="stylesheet"
           href="https://unpkg.com/react-quill@1.3.3/dist/quill.snow.css"
+          crossOrigin="anonymous"
         />
         <script
           src="https://unpkg.com/react@16/umd/react.development.js"
@@ -30,8 +31,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
           crossOrigin="anonymous"
         ></script>
-        <script src="https://unpkg.com/react-quill@1.3.3/dist/react-quill.js"></script>
-        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script crossOrigin="anonymous" src="https://unpkg.com/react-quill@1.3.3/dist/react-quill.js"></script>
+        <script crossOrigin="anonymous" src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
       </Head>{" "}
       <Component {...pageProps} />
     </div>
