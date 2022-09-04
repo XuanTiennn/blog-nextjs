@@ -3,9 +3,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { PostDTO } from "./../../Components/Item/post.dto";
 import dynamic from "next/dynamic";
-const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 import { BlogService } from "./../../api/service";
 import { Toast } from "react-bootstrap";
+const ReactQuill = dynamic(import("react-quill"), {
+  ssr: false,
+});
 export interface ICreatePostProps {
   title: string;
   content: any;
@@ -18,9 +20,14 @@ export default function CreatePost(props: ICreatePostProps) {
     _post[prop] = value;
     setPost(_post);
   };
-  console.log(content);
+  console.log({ post });
   const submit = () => {
-    BlogService.createPost({ ...post, content }).then((res) => {
+    BlogService.createPost({
+      ...post,
+      content,
+      author: "Xuan Tien",
+      tag: ["FrontEnd"],
+    }).then((res) => {
       return (
         <Toast className="d-inline-block m-1" bg={"Success".toLowerCase()}>
           <Toast.Header>
@@ -53,14 +60,18 @@ export default function CreatePost(props: ICreatePostProps) {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Nội dung</Form.Label>
           <div data-color-mode="dark">
-            <MDEditor value={content} onChange={setContent}  />
+            <ReactQuill theme="snow" value={content} onChange={setContent} />{" "}
           </div>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
+          <Form.Check
+            type="checkbox"
+            label="Đánh dấu"
+            onChange={(e) => applyChange("highlight", e.target.checked)}
+          />
         </Form.Group>
         <Button variant="primary" onClick={submit}>
-          Submit
+          Tạo mới
         </Button>
       </Form>
     </div>

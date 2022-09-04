@@ -7,8 +7,7 @@ import "../Components/Item/item.css";
 import "../Components/Tags/tag.css";
 import "../Components/Header/header.css";
 import "./blog/post.css";
-import "@uiw/react-md-editor/markdown-editor.css";
-import "@uiw/react-markdown-preview/markdown.css";
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div>
@@ -19,6 +18,20 @@ function MyApp({ Component, pageProps }: AppProps) {
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
           crossOrigin="anonymous"
         />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/react-quill@1.3.3/dist/quill.snow.css"
+        />
+        <script
+          src="https://unpkg.com/react@16/umd/react.development.js"
+          crossOrigin="anonymous"
+        ></script>
+        <script
+          src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+          crossOrigin="anonymous"
+        ></script>
+        <script src="https://unpkg.com/react-quill@1.3.3/dist/react-quill.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
       </Head>{" "}
       <Component {...pageProps} />
     </div>

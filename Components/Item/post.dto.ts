@@ -1,8 +1,9 @@
 export interface PostDTO {
   _id?: any;
   title?: string;
-  tag?: [];
+  tag?: Array<string>;
   highlight?: boolean;
   time?: any;
-  content?:any;
+  content?: any;
+  author?: string;
 }
