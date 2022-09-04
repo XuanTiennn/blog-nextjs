@@ -26,13 +26,23 @@ function MyApp({ Component, pageProps }: AppProps) {
         <script
           src="https://unpkg.com/react@16/umd/react.development.js"
           crossOrigin="anonymous"
+          async
         ></script>
         <script
           src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
           crossOrigin="anonymous"
+          async
         ></script>
-        <script crossOrigin="anonymous" src="https://unpkg.com/react-quill@1.3.3/dist/react-quill.js"></script>
-        <script crossOrigin="anonymous" src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script
+          crossOrigin="anonymous"
+          src="https://unpkg.com/react-quill@1.3.3/dist/react-quill.js"
+          async
+        ></script>
+        <script
+          crossOrigin="anonymous"
+          src="https://unpkg.com/babel-standalone@6/babel.min.js"
+          async
+        ></script>
       </Head>{" "}
       <Component {...pageProps} />
     </div>
