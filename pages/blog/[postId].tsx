@@ -48,10 +48,10 @@ export default function PostsItem(props: any) {
       <Header />
       <Layout>
         <div className="post">
-          <p className="post-title text-color-dark">{props.post.title}</p>
+          <p className="post-title text-color-dark">{props.post?.title}</p>
           <div
             className="post-content text-color-dark"
-            dangerouslySetInnerHTML={{ __html: props.post.content }}
+            dangerouslySetInnerHTML={{ __html: props.post?.content }}
           />
         </div>
       </Layout>
