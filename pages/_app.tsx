@@ -18,11 +18,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
           crossOrigin="anonymous"
         />
+
         <link
           rel="stylesheet"
           href="https://unpkg.com/react-quill@1.3.3/dist/quill.snow.css"
           crossOrigin="anonymous"
         />
+         <script src="https://unpkg.com/create-react-class/create-react-class.js"></script>
         <script
           src="https://unpkg.com/react@16/umd/react.development.js"
           crossOrigin="anonymous"
@@ -43,6 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           src="https://unpkg.com/babel-standalone@6/babel.min.js"
           async
         ></script>
+       
       </Head>{" "}
       <Component {...pageProps} />
     </div>

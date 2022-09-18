@@ -1,10 +1,10 @@
+import dynamic from "next/dynamic";
 import * as React from "react";
+import { Toast } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { PostDTO } from "./../../Components/Item/post.dto";
-import dynamic from "next/dynamic";
 import { BlogService } from "./../../api/service";
-import { Toast } from "react-bootstrap";
+import { PostDTO } from "./../../Components/Item/post.dto";
 const ReactQuill = dynamic(import("react-quill"), {
   ssr: false,
 });
@@ -20,7 +20,6 @@ export default function CreatePost(props: ICreatePostProps) {
     _post[prop] = value;
     setPost(_post);
   };
-  console.log({ post });
   const submit = () => {
     BlogService.createPost({
       ...post,
